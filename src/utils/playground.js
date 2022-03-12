@@ -4,6 +4,7 @@
 
   Once you complete your first task, remove this file
 * */
+import {transformCandidatesData} from "./helper"
 
 import {fetchCandidates} from "./API";
 
@@ -13,9 +14,8 @@ const runPlayground = async () => {
 
   // Add your logic here
 
-  // An example of executing code from API.js file:
   const candidates = await fetchCandidates();
-  console.log("candidates data: ", candidates);
+  console.log(transformCandidatesData(candidates));
 
 }
 

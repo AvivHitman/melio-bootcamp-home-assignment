@@ -9,10 +9,12 @@ export const NavbarLink = (props) => {
 
   const handleClick = () => {
     navigate(props.to);
+
+    
   };
 
   return (
-    <div onClick={handleClick}>
+    <div className="NavbarLink" onClick={handleClick} style={{color: isActive ? 'Orchid' : 'black'}} >
       {props.label}
     </div>
   );
