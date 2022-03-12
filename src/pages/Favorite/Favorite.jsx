@@ -30,7 +30,7 @@ export const Favorite = () => {
     }
 
     if(favoriteCandidates.length === 0){
-        return <p style={{'text-align':'center', 'line-height': '400px'}}>
+        return <p style={{'textAlign':'center', 'lineHeight': '400px'}}>
           you don't have any favorite candidates yet</p>
     }
 
