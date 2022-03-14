@@ -1,4 +1,4 @@
-.NavbarLink{
-    margin: 0.5rem;
-
+.NavbarLink {
+  margin: 0.5rem;
+  cursor: pointer;
 }

@@ -1,48 +1,40 @@
 export const getPersistentCandidatesData = () => {
-    return JSON.parse(localStorage.getItem("candidates"));
-}
+  return JSON.parse(localStorage.getItem("candidates"));
+};
 
 export const setPersistentCandidatesData = (candidates) => {
   localStorage.setItem("candidates", JSON.stringify(candidates));
-
-}
-
+};
 
 export function transformCandidatesData(fetchData) {
-  const data = [];
-  for (let i = 0; i < 50; i++) {
-    data.push({
-      firstName: fetchData[i].name.first,
-      lastName: fetchData[i].name.last,
-      email: fetchData[i].email,
-      city: fetchData[i].location.city,
-      country: fetchData[i].location.country,
-      picture: fetchData[i].picture.medium,
-      uuid: fetchData[i].login.uuid,
+  return getGroupedCandidates(
+    fetchData.map((candidate) => ({
+      firstName: candidate.name.first,
+      lastName: candidate.name.last,
+      email: candidate.email,
+      city: candidate.location.city,
+      country: candidate.location.country,
+      picture: candidate.picture.medium,
+      uuid: candidate.login.uuid,
       isFavorite: false,
-      isPreferred: checkEnglish(fetchData[i].location.country)
-    });
-  }
-  
-   return data;
-
+      isPreferred: getIsPreferred(candidate.nat),
+    }))
+  );
 }
 
-  const checkEnglish=(country)=>{
-    return country === 'United States' || country === 'England' || country === 'United Kingdom';
+const getIsPreferred = (nationality) => {
+  return nationality === "US" || nationality === "UK";
+};
 
-  }
-
-  const sortingData=(rawData)=>{
-    let data = rawData.reduce((r, e) => {
-      let group = e.firstName[0];
-      if(!r[group]) r[group] = [];
-      r[group].push(e);
-      return r;
-    }, {})
-    
-    let result =Object.keys(data).map(key => ({key, e: data[key]})).sort((a, b) => a.key.localeCompare(b.key));
-    
-   return result;
-
-  }
+const getGroupedCandidates = (rawCandidates) => {
+  const groupedCandidates = {};
+  rawCandidates.forEach((candidate) => {
+    const firstLetterInFirstName = candidate.firstName[0];
+    if (groupedCandidates[firstLetterInFirstName]) {
+      groupedCandidates[firstLetterInFirstName].push(candidate);
+    } else {
+      groupedCandidates[firstLetterInFirstName] = [candidate];
+    }
+  });
+  return groupedCandidates;
+};
