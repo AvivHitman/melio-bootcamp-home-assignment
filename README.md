@@ -1,15 +1,12 @@
 # Melio Task
-Welcome to the Melio Candidates app.
-This is a simple app which displays randomly generated candidates data in a list, using the `randomuser.me` API. In this app you can choose your favorite candidates and see them in the favorite's page.
+While working on the task, I thought of some new ideas that in my opinion would be great additions to the app, so I added the following:
 
-
-
-### My Addition
-1. Local app is available at `http://localhost:3000/` by using `Navigate` component.
-2. You can `unFavorite` a candidate by click again on the heart icon.
-3. Create `CardList` component that represents the list of the candidates.
+- Local app is available at http://localhost:3000/ by using `Navigate` component.
+- You can  now also `un-favorite` a candidate by clicking the heart icon for a second time.
+- Created the `CardList` component, which displays the candidates list, in order to avoid code duplication across the `Home.jsx` and `Favorite.jsx` pages.
 
 ### My Experience
-At first it was hard for me to start working with technologies that I'm not familiar with, but while working on the app, I gained knowledge and confidence.
-The task included new techniques for me that I definitely learned for later on.
-I really enjoyed doing this task and solving this challenge, thank you for the opportunity!
+Working with technologies that I'm not familiar with was a bit difficult at first, but while working on the app I feel that I gained knowledge and confidence.
+The task introduced me to new techniques that I definitely learned for later on.
+All in all, I really enjoyed working on this task and solving this challenge, thank you for the opportunity! :heart_eyes:
+
