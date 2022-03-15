@@ -10,3 +10,11 @@ Working with technologies that I'm not familiar with was a bit difficult at firs
 The task introduced me to new techniques that I definitely learned for later on.
 All in all, I really enjoyed working on this task and solving this challenge, thank you for the opportunity! :heart_eyes:
 
+[Watch Melio Candidates App example video](https://user-images.githubusercontent.com/50097337/158362944-e0f621ca-2e6f-4875-8b6b-156eaa4c00ed.mov
+)
+
+
+
+
+
+
