@@ -15,4 +15,5 @@
 .home-subtitle {
   display: flex;
   font-size: 14px;
+  margin-block-end: 20px;
 }

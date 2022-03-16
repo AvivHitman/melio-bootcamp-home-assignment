@@ -1,4 +1,9 @@
 .NavbarLink {
-  margin: 0.5rem;
   cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 15px;
+}
+
+.NavbarLink:hover {
+  color: #7849ff;
 }

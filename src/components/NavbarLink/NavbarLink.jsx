@@ -15,7 +15,7 @@ export const NavbarLink = (props) => {
     <div
       className="NavbarLink"
       onClick={handleClick}
-      style={{ color: isActive ? "Orchid" : "black" }}
+      style={{ color: isActive && "#7849FF" }}
     >
       {props.label}
     </div>

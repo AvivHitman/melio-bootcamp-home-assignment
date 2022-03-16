@@ -3,6 +3,7 @@ import "./Favorite.css";
 import {
   getPersistentCandidatesData,
   setPersistentCandidatesData,
+  getUpdatedCandidatesWithFavorite,
 } from "../../utils/helper.js";
 import { CardList } from "../../components/CardList/CardList";
 
@@ -14,7 +15,7 @@ export const Favorite = () => {
     runOnFavoritePageLoad();
   }, []);
 
-  const getFavoritesFromData = (candidates) => {
+  const updateFavoritesList = (candidates) => {
     const favoritesData = [];
     Object.keys(candidates).forEach((firstLetter) => {
       favoritesData[firstLetter] = candidates[firstLetter].filter(
@@ -25,20 +26,14 @@ export const Favorite = () => {
   };
 
   const handleFavoriteClick = (uuid) => {
-    const updatedCandidates = Object.values(data).map((groupedCandidates) =>
-      groupedCandidates.map((candidate) =>
-        candidate.uuid === uuid
-          ? { ...candidate, isFavorite: !candidate.isFavorite }
-          : candidate
-      )
-    );
-    getFavoritesFromData(updatedCandidates);
+    const updatedCandidates = getUpdatedCandidatesWithFavorite(data, uuid);
+    updateFavoritesList(updatedCandidates);
     setPersistentCandidatesData(updatedCandidates);
   };
 
   const runOnFavoritePageLoad = async () => {
     if (data) {
-      getFavoritesFromData(data);
+      updateFavoritesList(data);
     }
   };
 
@@ -48,7 +43,7 @@ export const Favorite = () => {
 
   return isFavoriteCandidatesEmpty ? (
     <p style={{ textAlign: "center", lineHeight: "400px" }}>
-      you don't have any favorite candidates yet
+      You don't have any favorite candidates yet
     </p>
   ) : (
     <div id="favorites">

@@ -1,19 +1,19 @@
 #favorites {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .favorites-title {
-    display: flex;
-    font-size: 34px;
-    font-weight: 700;
-    margin-block-start: 50px;
-  }
-  
-  .favorites-subtitle {
-    display: flex;
-    font-size: 14px;
-  }
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.favorites-title {
+  display: flex;
+  font-size: 34px;
+  font-weight: 700;
+  margin-block-start: 50px;
+}
+
+.favorites-subtitle {
+  display: flex;
+  font-size: 14px;
+  margin-block-end: 20px;
+}

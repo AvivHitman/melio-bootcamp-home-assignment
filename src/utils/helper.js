@@ -38,3 +38,14 @@ const getGroupedCandidates = (rawCandidates) => {
   });
   return groupedCandidates;
 };
+
+export const getUpdatedCandidatesWithFavorite = (candidates, uuid) => {
+  const updatedCandidates = Object.values(candidates).map((groupedCandidates) =>
+    groupedCandidates.map((candidate) =>
+      candidate.uuid === uuid
+        ? { ...candidate, isFavorite: !candidate.isFavorite }
+        : candidate
+    )
+  );
+  return updatedCandidates;
+};

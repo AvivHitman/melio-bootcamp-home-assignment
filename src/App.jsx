@@ -11,7 +11,7 @@ const App = () => {
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.favorites} element={<Favorite />} />
-        <Route exact path="/" element={<Navigate replace to="/home" />} />
+        <Route exact path="/" element={<Navigate replace to={routes.home} />} />
       </Routes>
     </BrowserRouter>
   );
